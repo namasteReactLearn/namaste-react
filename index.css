@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    box-shadow: 0px 0px 10px 0px gray;
+    width: 100%;
+    border-radius: 5px;
+}
+.logo {
+    padding-left: 20px;
+    height: 50px;
+    width: 50px;
+}
+.nav-items > ul{
+    display: flex;
+    padding-right: 20px;
+}
+
+.nav-items > ul > li {
+    text-decoration: none;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.res-card {
+    width: 270px;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 5px 2px gray;
+    transition: ease;
+}
+
+.card-image {
+    width: 270px;
+    border-radius: 5px;
+    height: 200px;
+}
