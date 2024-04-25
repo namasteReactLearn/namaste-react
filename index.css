@@ -14,6 +14,7 @@
 .nav-items > ul{
     display: flex;
     padding-right: 20px;
+    align-items: center;
 }
 
 .nav-items > ul > li {
@@ -44,4 +45,55 @@
     width: 270px;
     border-radius: 5px;
     height: 200px;
+}
+.filter {
+    margin: 10px 0 10px 0;
+}
+
+.filter-btn{
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    color: #fff;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shimmer-card{
+    width: 270px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+.login-btn {
+    padding: 7px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+
+.search{
+    justify-content: center;
+    display: flex;
+}
+.search-box {
+    margin-top: 20px;
+    padding: 10px;
+    border-right: none;
+}
+
+.searchBtn {
+    border-radius: 3px;
+    padding: 0px 30px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
 }
