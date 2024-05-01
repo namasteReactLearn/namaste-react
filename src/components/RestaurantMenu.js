@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
+
+// for this restaurantMenu we are going to use custom hook to optimize the code.
 
 const RestaurantMenu = () => {
-    const [restaurantMenu, setRestaurantMenu] = useState(null);
+    // const [restaurantMenu, setRestaurantMenu] = useState(null);
 
     const {resId} = useParams();
 
-    useEffect(() => {
-        fetchMenu();
-    }, []);
+    const resInfo = useRestaurantMenu(resId);
+    // useEffect(() => {
+    //     fetchMenu();
+    // }, []);
 
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API + resId)
+    // const fetchMenu = async () => {
+    //     const data = await fetch(MENU_API + resId)
         
-        const json = await data.json();
-        setRestaurantMenu(json.data);
+    //     const json = await data.json();
+    //     setRestaurantMenu(json.data);
 
-    };
+    // };
 
-    if(restaurantMenu === null) return <Shimmer />;
+    if(resInfo === null) return <Shimmer />;
 
     const {name, cuisines, costForTwoMessage
-    } = restaurantMenu?.cards[2]?.card?.card?.info;
+    } = resInfo?.cards[2]?.card?.card?.info;
 
-    const {itemCards} = restaurantMenu?.cards[4]?.groupedCard?.cardGroupMap?.
+    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.
     REGULAR?.cards[2]?.card?.card;
-
-    console.log(itemCards);
-
-
     
     return(
         <div>
