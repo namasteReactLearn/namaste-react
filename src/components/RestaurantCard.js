@@ -1,24 +1,40 @@
 import { CARD_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-    const { resData } = props;
-  
-    const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
-      resData?.info;
+  const { resData } = props;
+
+  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
+    resData?.info;
+  return (
+    <div className="m-4 p-4 w-[300px] bg-gray-100 rounded-lg transform hover:scale-110 hover:ease-out duration-300">
+      <img
+        alt="megna-img"
+        className="rounded-lg h-48 w-80"
+        src={CARD_URL + cloudinaryImageId}
+      />
+      <h3 className="font-bold py-4 text-lg text-wrap">{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{resData?.info?.sla?.deliveryTime} minutes</h4>
+    </div>
+  );
+};
+
+// Higher Order Component
+// Input  -RestaurantCard => RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
     return (
-      <div className="res-card">
-        <img
-          alt="megna-img"
-          className="card-image"
-          src={CARD_URL+cloudinaryImageId}
-        />
-        <h3>{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
-        <h4>{avgRating} stars</h4>
-        <h4>{costForTwo}</h4>
-        <h4>{resData?.info?.sla?.deliveryTime} minutes</h4>
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
       </div>
     );
   };
+};
 
-  export default RestaurantCard;
+export default RestaurantCard;
