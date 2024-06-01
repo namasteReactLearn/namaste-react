@@ -1,9 +1,13 @@
-import React from 'react'
+import { Component } from "react";
 
-const About = () => {
-  return (
-    <h1>About</h1>
-  )
+
+class About extends Component{
+
+    render() {
+        return(
+            <div className="text-center">Hello About Us this is Class Based Component.</div>
+        )
+    }   
 }
 
 export default About;

@@ -28,7 +28,7 @@ const ItemList = ({ items }) => {
               <img src={CARD_URL + item.card.info.imageId} className="w-full" />
             </div>
           </div>
-        ))};
+        ))}
     </div>
   );
 };
