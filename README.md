@@ -1,5 +1,9 @@
+# Install npm and Parcel to run this application
+
 # namaste-react
 My personal repository.
+
+
 
 /**
  * Header
@@ -29,3 +33,17 @@ import component from "path";
 
 export const Component;
 Import {component} from "path";
+
+# 2 Type of Routing in web apps
+    -Client Side Routing 
+    - Server Side Routing
+
+
+
+# Redux Toolkit
+ - Install @reduxjs/toolkit and react-redux
+ - Build Our Store
+ - Connect our store to our app
+ - Create a Slice( cartSlice)
+ - Dispatch(action)
+ - Selector
